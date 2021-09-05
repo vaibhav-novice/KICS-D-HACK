@@ -1,0 +1,58 @@
+
+Arjun was working on a research paper based on binary number system. He designed an algorithm to find maximum number of consecutive set bits in the binary array.
+
+Binary array is an array that contains only 0’s & 1’s.
+
+Input Format
+
+Given the value of ‘n’ an array of size ‘n’ as input in two separate lines.
+
+Constraints
+
+1<= n <= 20
+
+Output Format
+
+Print the integer output.
+
+Sample Input 0
+
+4
+0 0 0 0
+Sample Output 0
+
+0
+
+
+
+Solution::::::::::::-------------------
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        int n,max=0,count=0;
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+       int a[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            a[i]=sc.nextInt();
+            if(a[i]==1)
+                count++;
+            else{
+                if(max<count)
+                    max=count;
+                count=0;
+            } 
+        }
+        if(count>max)
+        System.out.print(count);
+        else
+         System.out.print(max);
+            
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
