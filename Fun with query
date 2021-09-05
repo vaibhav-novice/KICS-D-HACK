@@ -1,0 +1,64 @@
+Vikas Bhayia likes to play with bits. One day Vikas bhayia decides to assign a task to his student Sanya. You have help Sanya to complete this task. Task is as follows - Vikas Bhayia gives Q queries each query containing two integers a and b. Your task is to count the no of set-bits in for all numbers between a and b (both inclusive)
+
+Input Format
+
+Read Q - No of Queries, Followed by Q lines containing 2 integers a and b.
+
+Constraints
+
+Q,a,b are integers.
+
+Output Format
+
+Q lines, each containing an output for your query.
+
+Sample Input 0
+
+3
+1 1
+10 15
+10 11
+Sample Output 0
+
+1
+17
+5
+
+
+
+Solution:::::::::::::::----------------
+
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        int i,n,k,temp,count=0;
+        Scanner sc=new Scanner(System.in);
+        n=sc.nextInt();
+        int a,b;
+        for(k=0;k<n;k++)
+        {
+            a=sc.nextInt();
+            b=sc.nextInt();
+        
+       for(i=a;i<=b;i++)
+       {int j=i;
+           while(i!=0)
+           {
+              temp=i%2;
+               i=i/2;
+               if(temp==1)
+                   count++; 
+           }
+           
+        i=j;
+       }
+            System.out.println(count);
+           count=0;
+        }
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
